@@ -371,22 +371,29 @@ declare interface BankTabItemProps {
   appwriteItemId?: string;
 }
 
-declare interface TotlaBalanceBoxProps {
-  accounts: Account[];
-  totalBanks: number;
-  totalCurrentBalance: number;
+declare interface TotlCourriersBoxProps {
+  courriers: CourriersEntrant[];
+  totalCourriers: number;
+  totalCourriersAreceptionner: number;
+  totalCourriersATraiter: number;
 }
+
+
 
 declare interface FooterProps {
   user: User;
 }
 
-declare interface RightSidebarProps {
+declare interface RightSidebarPropsOld {
   user: User;
   transactions: Transaction[];
   banks: Bank[] & Account[];
 }
-
+declare interface RightSidebarProps {
+  user: User;
+  courriers: CourriersEntrant[];
+  propositions: CourriersProposition[] & CourriersOrientations[];
+}
 declare interface SiderbarProps {
   user: User;
 }
@@ -416,7 +423,7 @@ declare interface CategoryProps {
 }
 
 declare interface DoughnutChartProps {
-  accounts: Account[];
+  courriers: CourriersEntrant[];
 }
 
 declare interface PaymentTransferFormProps {
